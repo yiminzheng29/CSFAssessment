@@ -1,0 +1,36 @@
+<h3><b>Name: </b>{{restaurant.name}}</h3>
+<br>
+<h3><b>Cuisine: </b>{{restaurant.cuisine}}</h3>
+<br>
+<h3><b>Address: </b>{{restaurant.address}}</h3>
+<br>
+<img src="{{restaurant.mapUrl}}" width="200px" height="100px">
+<br>
+<h3><b>Comment</b></h3>
+<br>
+<form [formGroup]="commentForm" (ngSubmit)="processForm()">
+    <table>
+        <tr>
+            <td>
+                <b>Name: </b><span><input type="text" placeholder="Fred" formControlName="name"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Rating: </b><span><input type="number" placeholder="5" formControlName="rating"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <textarea cols="30" rows="4" placeholder="Input comments here" formControlName="text"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" [routerLink]="['/']">Back</button>
+                <button type="submit" [disabled]="this.commentForm.invalid">Submit</button>
+
+            </td>
+        </tr>
+    </table>
+</form>

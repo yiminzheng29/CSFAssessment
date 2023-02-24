@@ -1,0 +1,8 @@
+<h2>List of {{query}} Restaurants</h2>
+
+<div *ngFor="let r of restaurants"
+    [routerLink]="['/restaurant', r.restaurantId]">
+
+    <h4>{{r.name}}</h4>
+    
+</div>
