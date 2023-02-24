@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -65,7 +66,7 @@ public class RestaurantRepository {
 //    },
 //    coordinates: "$address.coord"
 //   }
-//  }
+//  }.sort({name: 1})
 // ]);
 
 	 */
@@ -78,6 +79,7 @@ public class RestaurantRepository {
 
 		Criteria criteria = Criteria.where("cuisine").is(cuisine);
 		Query query = Query.query(criteria);
+		query.with(Sort.by(Sort.Direction.ASC, "name"));
 
 		List<Restaurant> restaurants = new LinkedList<>();
 		

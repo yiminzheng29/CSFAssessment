@@ -1,9 +1,13 @@
 package vttp2022.csf.assessment.server.repositories;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+
+import javax.imageio.ImageIO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -103,4 +107,4 @@ public class MapCache {
 
 	// You may add other methods to this class
 
-}
+		}
